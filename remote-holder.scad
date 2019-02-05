@@ -3,9 +3,6 @@
 //First github integration for backup
 
 
-
-
-
 //dimensions of the remotes
 //tv remote
 //top button face
@@ -31,8 +28,6 @@ module remoteHolder() {
 	sound_Y = 41;
 
 
-
-
 	difference(){
 		//additions
 		union(){
@@ -42,6 +37,25 @@ module remoteHolder() {
 			//Surround sound Remote
 			translate([(tv_remote_X+sound_X+(2*gap))/2, 0, 45/2])
 			cube(size=[sound_X + gap, sound_Y + gap, 45], center=true);
+			//rounding the corners for tv remote holder
+			translate([(tv_remote_X)/2, (tv_remote_Y)/2, 55/2])
+			cylinder(h=55, r=2.5, center=true, $fn=50);
+			translate([-(tv_remote_X)/2, (tv_remote_Y)/2, 55/2])
+			cylinder(h=55, r=2.5, center=true, $fn=50);
+			translate([-(tv_remote_X)/2, -(tv_remote_Y)/2, 55/2])
+			cylinder(h=55, r=2.5, center=true, $fn=50);
+			translate([(tv_remote_X)/2, -(tv_remote_Y)/2, 55/2])
+			cylinder(h=55, r=2.5, center=true, $fn=50);
+			//rounding the corners for the sound remote
+			translate([sound_X+gap+(tv_remote_X+gap)/2,(sound_Y)/2, 45/2])
+			cylinder(h=45, r=2.5, center=true, $fn=50);
+			translate([sound_X+gap+(tv_remote_X+gap)/2,-(sound_Y)/2, 45/2])
+			cylinder(h=45, r=2.5, center=true, $fn=50);
+			translate([(tv_remote_X+gap)/2,(sound_Y)/2, 45/2])
+			cylinder(h=45, r=2.5, center=true, $fn=50);
+			translate([(tv_remote_X+gap)/2,-(sound_Y)/2, 45/2])
+			cylinder(h=45, r=2.5, center=true, $fn=50);
+			//testing
 		}
 
 		//subtractions
@@ -52,6 +66,9 @@ module remoteHolder() {
 			//sound remote cuttout
 			translate([(tv_remote_X+sound_X+(2*gap))/2,0,45/2 + gap])
 			cube(size=[sound_X, sound_Y, 45.5], center=true);
+
+			//fun cylinder cuttous?
+			// translate([0,0, 24])rotate([0,75,0]) color("Orange") cylinder(h=120, r=2.5, center=true, $fn=20);
 		}
 	}
 
