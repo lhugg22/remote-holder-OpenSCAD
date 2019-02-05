@@ -40,13 +40,21 @@ module remoteHolder() {
 			translate([0,0,55/2])
 			cube(size=[tv_remote_X + gap, tv_remote_Y + gap, 55], center=true);
 			//Surround sound Remote
-			translate([(tv_remote_X+sound_X+(2*gap))/2, 0, 45/2])
+			translate([(tv_remote_X+sound_X+(2*gap))/2, 0, 55/2])
 			cube(size=[sound_X + gap, sound_Y + gap, 45], center=true);
+			
+			color("Orange") translate([(tv_remote_X+sound_X+(2*gap))/2,0,55/2])
+			cube(size=[sound_X, sound_Y, 45.5], center=true);
 		}
 
 		//subtractions
 		union(){
-
+			//TV Remote cuttout
+			translate([0,0,55/2 + gap])
+			cube(size=[tv_remote_X, tv_remote_Y, 55.5], center=true);
+			//sound remote cuttout
+			// translate([(tv_remote_X+sound_X+(2*gap))/2,0,55/2])
+			// cube(size=[sound_X, sound_Y, 45.5], center=true);
 		}
 	}
 
