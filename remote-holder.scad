@@ -28,7 +28,7 @@ module remoteHolder() {
 	sound_X = 16;
 	sound_Y = 41;
 
-	rotateVector = [0, 20, 0];
+	rotateVector = [0, 16, 0];
 
 	rotateTV = [15, 0, 0];
 	rotateSound = [-15, 0, 0];
@@ -44,8 +44,11 @@ module remoteHolder() {
 			rotate(rotateVector) rotate(rotateSound) translate([(tv_remote_X+sound_X+(2*gap))/2, 0, 55/2 - 5]) 
 			cube(size=[sound_X + gap, sound_Y + gap, 55], center=true);
 
-			translate([-1.5,10,36]) rotate([70,-15,-85]) color("DarkGreen") linear_extrude(height=1, center=true, convexity=10, scale=1)
-			text("TV Remote", size=7);
+			translate([-3.5,10,36]) rotate([70,-15,-85]) color("DarkGreen") linear_extrude(height=1, center=true, convexity=10, scale=1)
+			text("Flix", size=7);
+
+			translate([-5.5,14,26]) rotate([85,5,-90]) color("DarkGreen") linear_extrude(height=3, center=true, convexity=10, scale=1)
+			text("Remote", size=10, font="Times New Roman");
 		}
 
 		//subtractions
